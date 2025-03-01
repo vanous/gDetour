@@ -24,7 +24,7 @@ excludes = [
     "vite.config.js",
     "svelte.config.js",
     "rollup.config.js",
-
+    ".github/",
 ]
 
 [git]

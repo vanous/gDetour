@@ -17,6 +17,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 npm run build
-rm -r ./backend/static/*
-cp -r ./dist/*  ./backend/static/
+rm -r ../backend/static/*
+cp -r ./dist/*  ../backend/static/
 
