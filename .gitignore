@@ -49,3 +49,5 @@ gdtfs
 data
 *.gdtf
 *.json
+!package.json
+!package-lock.json
