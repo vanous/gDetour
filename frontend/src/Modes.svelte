@@ -120,19 +120,19 @@
                 id: node_i + item.dmx,
                 dmx: item.dmx,
                 default: item.default,
-                attribute: item.id,
+                attribute: item.attribute,
                 geometry: item.geometry,
                 type: node_type,
                 [node_edge]: node_position,
                 data: {
-                    label: `${item.dmx} ${item.geometry}: ${item.id}`,
+                    label: `${item.dmx} ${item.geometry}: ${item.attribute}`,
                 },
-                address: `${item.geometry}_${item.id}`,
+                address: `${item.geometry}_${item.attribute}`,
                 position: { x: node_x, y: node_y * index },
             });
 
             console.log(
-                `DMX: ${item.dmx}, Geo: ${item.geometry}, Attr: ${item.id}`
+                `DMX: ${item.dmx}, Geo: ${item.geometry}, Attr: ${item.attribute}`
             );
             default_dmx.push(item.default);
         });
