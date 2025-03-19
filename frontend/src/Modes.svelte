@@ -129,6 +129,7 @@
                 },
                 address: `${item.geometry}_${item.id}`,
                 position: { x: node_x, y: node_y * index },
+                connectable: true,
             });
 
             console.log(

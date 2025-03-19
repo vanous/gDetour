@@ -42,6 +42,13 @@
     }
     function clearEdges() {
         edges.set([]);
+
+        // makes output nodes connectable after clearing all mappings
+        const outputs = $nodes.filter((node) => node.type === "output");
+        outputs.forEach((output) => {
+            output.connectable = true;
+        });
+        $nodes = $nodes;
     }
 </script>
 
