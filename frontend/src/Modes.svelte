@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (C) 2025 vanous
+    Copyright (C) 2025 Kwimbee, vanous
 
     This file is part of gDetour.
 
