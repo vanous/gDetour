@@ -23,7 +23,6 @@
     import { edges, nodes, dmx_mapping } from "./flow_stores.js";
     import { Panel } from "@xyflow/svelte";
 
-
     import {
         SvelteFlow,
         Controls,
@@ -72,10 +71,16 @@
             //new_dmx_mapping[x] = y;
             new_dmx_mapping.push([x, y]);
             edge.type = "button"; // for the remove button
+
+            const output_node = $nodes.find((node) => node.id === edge.target);
+            output_node.connectable = false;
         });
         dmx_mapping.set(new_dmx_mapping);
         console.log("dmx mapping", dmx_mapping);
+
         $edges = $edges;
+        $nodes = $nodes;
+
         sendMapping();
     }
     const snapGrid = [25, 25];
@@ -86,12 +91,12 @@
     <SvelteFlow {nodes} {edges} {edgeTypes} {snapGrid} {proOptions} fitView>
         <Controls />
 
-<Panel position="top-right">
-        <ButtonOneToMany />
-</Panel>
-<Panel position="bottom-right">
-        <ButtonSelectSameAttribute />
-</Panel>
+        <Panel position="top-right">
+            <ButtonOneToMany />
+        </Panel>
+        <Panel position="bottom-right">
+            <ButtonSelectSameAttribute />
+        </Panel>
         <Background bgColor="#1d72aa" variant={BackgroundVariant.Dots} />
     </SvelteFlow>
 </div>

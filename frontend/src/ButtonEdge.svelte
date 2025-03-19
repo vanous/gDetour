@@ -27,6 +27,8 @@
         useEdges,
     } from "@xyflow/svelte";
 
+    import { nodes } from "./flow_stores.js";
+
     type $$Props = EdgeProps;
 
     export let id: $$Props["id"];
@@ -51,8 +53,15 @@
 
     const edges = useEdges();
 
-    const onEdgeClick = () =>
+    function onEdgeClick() {
+        // makes the output node connectable again after deleting the edge
+        const current_edge = $edges.find((edge) => edge.id === id);
+        const output_node_id = current_edge.target;
+        const output_node = $nodes.find((node) => node.id === output_node_id);
+        output_node.connectable = true;
+
         edges.update((eds) => eds.filter((edge) => edge.id !== id));
+    }
 </script>
 
 <BaseEdge path={edgePath} {markerEnd} {style} />
