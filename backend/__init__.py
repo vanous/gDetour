@@ -127,9 +127,8 @@ def get_modes():
     filepath = Path(local / "upload")
     full_path = Path(filepath / fixture)
     gdtf_fixture = pygdtf.pygdtf.FixtureType(full_path)
-    modes = pygdtf.utils.get_dmx_modes_info(
-        gdtf_fixture, include_channels=True, include_channel_functions=True
-    )
+    modes = gdtf_fixture.dmx_modes.as_dict()
+
     print("Received DMX Mapping:", data)  # Print the received data to the console
     return jsonify(
         {"status": "success", "data": modes}
