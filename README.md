@@ -106,7 +106,7 @@ it](https://github.com/vanous/gDetour/archive/refs/heads/master.zip) and uzip.
 
 Inside the downloaded/unzipped repository, run:
 
-```
+```bash
 uv run run.py
 ```
 
@@ -121,19 +121,24 @@ It will open up the application interface in a webbrowser window.
 
 ### Install requirements
 
-- `npm i`
-- `uv sync`
+#### Back end (flask)
+
+```bash
+uv sync
+```
+
+#### Front end (svelte)
+
+```bash
+cd frontend`
+npm i
+```
 
 ### Run just the frontend svelte app
 
-```
+```bash
+cd frontend
 npm run dev -- --open
-```
-
-### Run the whole application
-
-```
-uv run run.py
 ```
 
 ## Contributions
