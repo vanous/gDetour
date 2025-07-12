@@ -24,7 +24,7 @@ requires-python = ">=3.13"
 dependencies = [
     "flask>=3.1.0",
     "ifaddr>=0.2.0",
-    "pygdtf>=1.1.0",
+    "pygdtf>=1.2.6",
     "sacn>=1.10.0",
     "websockets>=14.2",
 ]

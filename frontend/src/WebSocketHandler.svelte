@@ -87,7 +87,7 @@
 </script>
 
 <div class="columns">
-    <label for="111" class="column checkbox">See live DMX data:</label>
+    <label for="111" class="column checkbox">Enable live sACN data:</label>
     <div class="column">
         <input type="checkbox" id="111" style="min-height:25px;min-width:25px;" bind:checked={isConnected} />
     </div>
