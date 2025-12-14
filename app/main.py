@@ -32,7 +32,7 @@ ws_server = WebSocketServer()
 
 def run_flask():
     app.run(
-        debug=True, use_reloader=False
+        debug=False, use_reloader=False
     )  # use_reloader=False to prevent the app from starting twice
 
 
